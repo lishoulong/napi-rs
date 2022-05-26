@@ -1,3 +1,6 @@
-const { run } = require('./index.node')
+const { execSync } = require('child_process')
 
-run(process.argv.slice(1))
+execSync(`cargo run -p napi-cli -- ${process.argv.slice(2).join(' ')}`, {
+  shell: true,
+  stdio: 'inherit',
+})

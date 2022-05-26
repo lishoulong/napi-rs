@@ -5,6 +5,6 @@
     "napi": "./index.js"
   },
   "scripts": {
-    "build": "cargo run -p napi-cli -- build -p napi-cli"
+    "build": "cargo build -p napi-cli"
   }
 }

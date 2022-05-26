@@ -358,14 +358,12 @@ mod tests {
   fn test_target_from_str() {
     // crate will be built both for lib and binary
     // only need snapshot test once.
-    if option_env!("CARGO_BIN_NAME").is_some() {
-      use insta::assert_debug_snapshot;
-      let targets = AVAILABLE_TARGETS
-        .iter()
-        .map(Target::from)
-        .collect::<Vec<_>>();
+    use insta::assert_debug_snapshot;
+    let targets = AVAILABLE_TARGETS
+      .iter()
+      .map(Target::from)
+      .collect::<Vec<_>>();
 
-      assert_debug_snapshot!(&targets);
-    }
+    assert_debug_snapshot!(&targets);
   }
 }
